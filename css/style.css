@@ -1,3 +1,129 @@
+@keyframes points {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50%);
+  }
+}
+@keyframes wiggle {
+  25% {
+    transform: translateX(2%);
+  }
+  75% {
+    transform: translateX(-2%);
+  }
+}
+* {
+  text-decoration: none;
+  list-style: none;
+}
 
+body {
+  margin: 0 0 20%;
+}
+
+h2 {
+  text-align: center;
+  font-family: "roboto";
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background-color: #579C87;
+}
+header a {
+  color: #FDCB46;
+  font-family: "roboto";
+}
+
+.menus {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu__link {
+  width: 250px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: 0 0 0.5rem grey;
+  margin: 2rem;
+  transition: font-size 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+.menu__link:hover {
+  font-size: 175%;
+  opacity: 0.8;
+}
+
+.menu__link--note {
+  background-color: #FCDFDB;
+  color: #3c1218;
+  font-family: "Devonshire";
+  text-align: center;
+}
+
+.menu__link--chic {
+  background-color: #fff5fe;
+  color: #c77412;
+  font-family: "Croissant One";
+  text-align: center;
+}
+
+.menu__link--delice {
+  background-color: #f9f9f9;
+  color: #0887fb;
+  font-family: "Dancing Script";
+  text-align: center;
+}
+
+.menu__link--palette {
+  background-color: #fdfffd;
+  color: #72bf56;
+  font-family: "Kaushan Script";
+  text-align: center;
+}
+
+.soon {
+  display: flex;
+  justify-content: center;
+}
+
+.soon__btn {
+  width: 43%;
+  min-width: 200px;
+  margin: 3% auto;
+  font-family: "roboto";
+  background-color: #579C87;
+  color: #FDCB46;
+  border-radius: 13px;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 150%;
+}
+
+footer {
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: #579C87;
+  margin-top: 1%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+footer a {
+  color: #FDCB46;
+  font-family: "roboto";
+  margin: 1rem;
+}
+footer a:hover {
+  animation: wiggle 100ms;
+  animation-iteration-count: 2;
+}
 
 /*# sourceMappingURL=style.css.map */
