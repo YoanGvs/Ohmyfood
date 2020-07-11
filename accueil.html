@@ -20,69 +20,77 @@
     <script src="https://kit.fontawesome.com/cc460cd7eb.js" crossorigin="anonymous"></script>
 
     <!--Style-->
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="container">
+        <!--Header-->
+        <header class="header">
+            <a href="accueil.html">
+                <h1>Ohmyfood</h1>
+            </a>
+        </header>
 
-    <!--Header-->
-    <header class="header">
-        <a href="header__logo">
-            <h1>Ohmyfood</h1>
-        </a>
-    </header>
+        <!--Main-->
+        <main>
 
-    <!--Main-->
-    <main class="main">
+            <!--Section menu-->
+            <section class="menus">
 
-        <!--Section menu-->
-        <section class="MenuGrid">
+                <!--Menu note enchantée-->
+                <nav class="menu menu--note">
+                    <a href="laNote.html"  >
+                        <i class="fas fa-music menu--note__fas"></i>
+                        <h3 class="menu__titre">La note enchantée</h3>
+                        <p>Menu</p>
+                    </a>            
+                </nav>
 
-            <!--Menu note enchantée-->
-            <article class="menuPrev menuPrev--note">
-                <a href="laNote.html" class="menuPrev menuPrev--note">
-                    <i class="fas fa-music menuPrev--note__fas"></i>
-                    <p class="menuPrev__titre menuPrev__titre--note">La note enchantée</p>
-                    <p>menu</p>
-                </a>            
-            </article>
+                <!--Menu Chic à la française-->
+                <nav class="menu menu--chic">
+                    <a href="leChic.html" >
+                        <h3 class="menu__titre">Le chic à la française</h3>
+                        <p>Menu</p>
+                    </a>            
+                </nav>
 
-            <!--Menu Chic à la française-->
-            <article class="menuPrev menuPrev--chic">
-                <a href="laChic.html" class="menuPrev menuPrev--chic"></a>
-                    <p class="menuPrev__titre menuPrev__titre--chic">Le</p>
-                    <p>menu</p>
-                </a>            
-            </article>
+                <!--menu délice des papilles-->
+                <nav class="menu menu--delice">
+                    <a href="leDelice.html" >
+                        <h3 class="menu__titre menu__link__titre--delice">Les délice des papilles</h3>
+                        <p>Menu</p>
+                    </a>            
+                </nav>
 
-            <!--menu délice des papilles-->
-            <article class="menuPrev menuPrev--delice">
-                <a href="leDelice.html" class="menuPrev menuPrev--delice">
-                    <p class="menuPrev__titre menuPrev__titre--delice">La note enchantée</p>
-                    <p>menu</p>
-                </a>            
-            </article>
+                <!--menu palette du gout-->
+                <nav class="menu menu--palette">
+                    <a href="laPalette.html" >
+                        <h3 class="menu__titre menu__titre--palette">La palette du goût</h3>
+                        <p>Menu</p>
+                    </a>               
+                </nav>
+            </section>
+ 
+            <!--Section soon-->
+            <section class="soon">
+                <a href="" class="soon__btn">Prochainement 
+                    <div class="loader">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                </div>
+            </a>
+                
+            </section>
+        </main>
 
-            <!--menu palette du gout-->
-            <article class="menuPrev menuPrev--palette">
-                <a href="laPalette.html" class="menuPrev menuPrev--palette">
-                    <p class="menuPrev__titre menuPrev__titre--palette">La note enchantée</p>
-                    <p>menu</p>
-                </a>            
-            </article>
-
-        </section>
-
-        <!--Section soon-->
-        <section class="soon">
-            <a href="" class="soon__btn">Prochainement</a>
-        </section>
-
-    </main>
-
-    <!--Footer-->
+        <!--Footer-->
     <footer class="footer">
-        <a href="mention.html">Mentions Légales</a>
-        <a href="mailto:oui@oui.com">Contactez-nous</a>
+        <a href="mention.html" class="footer__mention">Mentions Légales</a>
+        <a href="mailto:oui@oui.com" class="footer__contact">Contactez-nous</a>      
     </footer>
+        
+    </div> 
+    
 </body>
 </html>

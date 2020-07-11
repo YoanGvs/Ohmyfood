@@ -1,0 +1,11 @@
+{
+  "name": "p3_yoan_govaerts",
+  "version": "1.0.0",
+  "description": "Projet 3 OpenClassrooms Ohmyfood",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "author": "Yoan GVS",
+  "license": "ISC"
+}

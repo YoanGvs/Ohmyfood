@@ -1,0 +1,399 @@
+$colour-primary:#579C87;
+$colour-secondary:#FDCB46;
+$laNoteColor: #FCDFDB;
+$leChicColor: #fff5fe;
+$laDeliceColor: #f9f9f9;
+$laPaletteColor: #fdfffd;
+
+$points-duree: 1500ms;
+$points-delay: $points-duree/4;
+
+$couleur-texte-menuNote: #3C1218;
+$couleur-texte-menuNote1: #F04A5E;
+$couleur-texte-menuNote2: #F78F6A;
+$couleur-texte-menuChic: #C77412;
+$couleur-texte-menuChic1: #A56799;
+$couleur-texte-menuChic2: #905BFD;
+$couleur-texte-menuDelice: #229DF9;
+$couleur-texte-menuDelice2:#0228DD;
+$couleur-texte-menuDelice3: #0887fb;
+$couleur-texte-menuPalette: #72BF56;
+$couleur-texte-menuPalette1: #3D9339;
+$couleur-texte-menuPalette2: #BFFF7E;
+
+
+@keyframes wiggle {
+    25%{
+        transform: translateX(2%);
+    }
+    75%{
+        transform: translateX(-2%);
+    }
+}
+
+////////////*GENERAL*////////////
+*{
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    margin: 0 0 20%;
+    min-height: 100%;
+}
+
+h2{
+    text-align: center;
+    font-family: "roboto";
+}
+
+ul{
+    padding-left: 0px;
+}
+
+
+h4{    
+    background: linear-gradient(to top, rgba(255, 0, 0, 0.5) 0%, rgba(255, 0, 0, 0.5) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+    transition: background-size .5s;
+    font-size: 175%;
+    text-align: center;
+}
+
+h4:hover{
+    background-size: 100% 100%;
+}
+////////////*HEADER*/////////////
+header{
+    display: flex;
+    justify-content: center;
+    background-color: $colour-primary;
+    a{
+        color: $colour-secondary;
+        font-family: "roboto";
+    }
+}
+
+////////////*MAIN*///////////////
+
+.menus{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1000px;
+    align-items: center;
+    margin: auto;
+}
+
+.menu{
+    margin: 20px;
+    width: 300px;
+    height:400px;
+    box-shadow: 0 0 0.5rem grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:150%;
+    text-align: center;
+    transition: font-size 300ms ease-in-out, opacity 300ms ease-in-out;
+    &:hover{
+        font-size: 200%;
+        opacity: 0.8;
+    }
+    &--note{
+        background-color: $laNoteColor;
+        &__fas{
+            font-size: 200%;
+            background: -webkit-linear-gradient(left, $couleur-texte-menuNote1, $couleur-texte-menuNote2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        a{
+            color:$couleur-texte-menuNote;
+            font-family: 'Devonshire';
+        }
+        p{
+            font-family: "kalam";
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size:40px;
+        }
+    }
+    &--chic{
+        color:$couleur-texte-menuChic;
+        h3{
+            font-family: 'Croissant One';
+            background: -webkit-linear-gradient(top left, $couleur-texte-menuChic, $couleur-texte-menuChic2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+        p{
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size:40px;
+            color:$couleur-texte-menuChic;
+        }
+    }
+    &--delice{       
+        color: $couleur-texte-menuDelice;
+        h3{
+            font-family: 'Dancing Script';
+            background: -webkit-linear-gradient(top left, $couleur-texte-menuDelice2, $couleur-texte-menuDelice);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;text-align: center;
+        }
+        p{
+            font-family: "kalam";
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size:40px;
+            color: $couleur-texte-menuDelice;
+        }  
+    }
+    &--palette{
+        color: $couleur-texte-menuPalette;
+        h3{
+            font-family: 'Kaushan Script';
+            background: -webkit-linear-gradient(top left, $couleur-texte-menuPalette1, $couleur-texte-menuPalette2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }   
+        p{
+            font-family: "kalam";
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size:40px;
+            color: $couleur-texte-menuPalette;
+        }        
+    }
+    &__footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;   
+        font-size: 200%;
+        &--laNote{
+            font-family: "devonshire";
+        }
+    }
+}
+
+.menu__link{
+    min-height: 1680px;
+    p{
+        font-size: 200%;
+        margin-top: 10px;
+    }
+    &--note{
+        background-color: $laNoteColor;
+        color:$couleur-texte-menuNote;
+        &__fas{
+            font-size: 200%;
+            background: -webkit-linear-gradient(left, $couleur-texte-menuNote1, $couleur-texte-menuNote2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        h3{
+            font-family: 'Devonshire';
+        }
+    }
+    &--chic{
+        color:$couleur-texte-menuChic;
+        h3{
+            font-family: 'Croissant One';
+            background: -webkit-linear-gradient(top left, $couleur-texte-menuChic, $couleur-texte-menuChic2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+    }
+    &--delice{       
+        color: $couleur-texte-menuDelice;
+        h3{
+            font-family: 'Dancing Script';
+            background: -webkit-linear-gradient(top left, $couleur-texte-menuDelice2, $couleur-texte-menuDelice);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;text-align: center;
+        }  
+    }
+    &--palette{
+        color: $couleur-texte-menuPalette;
+        h3{
+            font-family: 'Kaushan Script';
+            background: -webkit-linear-gradient(top left, $couleur-texte-menuPalette1, $couleur-texte-menuPalette2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }           
+    }
+}
+
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader > span{
+    display: inline-block;
+    background-color: $colour-secondary;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: 0 3px;
+    animation: bounce 0.6s infinite alternate;
+}
+
+.loader > span:nth-child(2){
+    animation-delay: 0.2s;
+}
+.loader > span:nth-child(3){
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    to {
+        width: 8px;
+        height: 8px;
+        transform: translate3d(0, -8px, 0);
+    }
+}
+.soon{
+    display: flex;
+    font-size: 150%;
+    &__btn{
+        display: flex;
+        min-width: 200px;
+        margin: 3% auto;
+        font-family: "roboto";
+        background-color: $colour-primary;
+        color: $colour-secondary;
+        border-radius: 13px;
+        padding: 0.5rem;
+        text-align: center;
+    }
+}
+
+.menuHeader{
+    font-size: 200%;
+    &__title{
+        margin:5px;
+    }
+}
+
+.menuSection{
+    
+    &__title{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+    &--note{
+        font-family: 'Devonshire';
+    }
+    &--delice{
+        font-family: 'Dancing Script';
+        color: black;
+    }
+    &--palette{
+        font-family: 'Kaushan Script';
+        color: black;
+    }
+    &--chic{
+        font-family: 'Croissant One';
+    }
+}
+
+.barre{
+    width: 40%;
+    height: 6px;
+    background: $colour-primary;
+    margin: 5px;
+    &--laNote{
+        background: $couleur-texte-menuNote;
+    }
+    &--leDelice{
+        background:-webkit-linear-gradient(top left, #0228DD, #229DF9); ;
+    }
+    &--leChic{
+        background: $couleur-texte-menuChic;
+    }
+    &--laPalette{
+        background: #3D9339;
+    }
+}
+
+
+.menuHeader{
+    text-align: center;
+    margin-top: 20px;
+    &__fas{
+        font-size: 150%;
+        background: -webkit-linear-gradient(left, $couleur-texte-menuNote1, $couleur-texte-menuNote2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+
+.menuItem{
+    box-shadow: 0 0 0.5rem grey;
+    max-width: 66%;
+    margin: auto;
+    min-height: 1000PX;
+    padding: 20px;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+}
+
+
+li{
+    display: flex;
+    justify-content: space-between;
+}
+
+.item__price{
+    font-weight: bold;
+    font-size: 175%;
+}
+.item__name{
+    font-size: 150%;
+}
+
+.menuDetails{
+    padding: 15px;
+    font-size: 100%;
+    &--chic{
+        background: -webkit-linear-gradient(top left, $couleur-texte-menuChic, $couleur-texte-menuChic2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+//////////*FOOTER*//////////////
+footer{
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: $colour-primary;
+    margin-top: 1%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    a{
+        color: $colour-secondary;
+        font-family: "roboto";
+        margin: 1rem;
+        &:hover{
+            animation: wiggle 100ms;
+            animation-iteration-count: 2;
+        }
+    }
+}
+
