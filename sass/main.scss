@@ -52,8 +52,15 @@ ul{
 }
 
 
-h4{
-    margin: 0;
+h4{    
+    background: linear-gradient(to top, rgba(255, 0, 0, 0.5) 0%, rgba(255, 0, 0, 0.5) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+    transition: background-size .5s;
+    font-size: 175%;
+    text-align: center;
+}
+
+h4:hover{
+    background-size: 100% 100%;
 }
 ////////////*HEADER*/////////////
 header{
@@ -67,35 +74,119 @@ header{
 }
 
 ////////////*MAIN*///////////////
+
 .menus{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 1000px;
+    align-items: center;
+    margin: auto;
+}
+
+.menu{
+    margin: 20px;
+    width: 300px;
+    height:400px;
+    box-shadow: 0 0 0.5rem grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:150%;
+    text-align: center;
+    transition: font-size 300ms ease-in-out, opacity 300ms ease-in-out;
+    &:hover{
+        font-size: 200%;
+        opacity: 0.8;
+    }
+    &--note{
+        background-color: $laNoteColor;
+        &__fas{
+            font-size: 200%;
+            background: -webkit-linear-gradient(left, $couleur-texte-menuNote1, $couleur-texte-menuNote2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        a{
+            color:$couleur-texte-menuNote;
+            font-family: 'Devonshire';
+        }
+        p{
+            font-family: "kalam";
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size:40px;
+        }
+    }
+    &--chic{
+        color:$couleur-texte-menuChic;
+        h3{
+            font-family: 'Croissant One';
+            background: -webkit-linear-gradient(top left, $couleur-texte-menuChic, $couleur-texte-menuChic2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+        p{
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size:40px;
+            color:$couleur-texte-menuChic;
+        }
+    }
+    &--delice{       
+        color: $couleur-texte-menuDelice;
+        h3{
+            font-family: 'Dancing Script';
+            background: -webkit-linear-gradient(top left, $couleur-texte-menuDelice2, $couleur-texte-menuDelice);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;text-align: center;
+        }
+        p{
+            font-family: "kalam";
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size:40px;
+            color: $couleur-texte-menuDelice;
+        }  
+    }
+    &--palette{
+        color: $couleur-texte-menuPalette;
+        h3{
+            font-family: 'Kaushan Script';
+            background: -webkit-linear-gradient(top left, $couleur-texte-menuPalette1, $couleur-texte-menuPalette2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }   
+        p{
+            font-family: "kalam";
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size:40px;
+            color: $couleur-texte-menuPalette;
+        }        
+    }
+    &__footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;   
+        font-size: 200%;
+        &--laNote{
+            font-family: "devonshire";
+        }
+    }
 }
 
 .menu__link{
-    width: 250px;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 0.5rem grey;
-    margin: 2rem;
-    transition: font-size 300ms ease-in-out, opacity 300ms ease-in-out;
-    &:hover{
-        font-size: 150%;
-        opacity: 0.8;
-    }
+    min-height: 1680px;
     p{
         font-size: 200%;
         margin-top: 10px;
     }
     &--note{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         background-color: $laNoteColor;
         color:$couleur-texte-menuNote;
         &__fas{
@@ -110,7 +201,6 @@ header{
     }
     &--chic{
         color:$couleur-texte-menuChic;
-        font-weight: bold;
         h3{
             font-family: 'Croissant One';
             background: -webkit-linear-gradient(top left, $couleur-texte-menuChic, $couleur-texte-menuChic2);
@@ -129,7 +219,6 @@ header{
             text-align: center;text-align: center;
         }  
     }
-
     &--palette{
         color: $couleur-texte-menuPalette;
         h3{
@@ -142,11 +231,40 @@ header{
     }
 }
 
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader > span{
+    display: inline-block;
+    background-color: $colour-secondary;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: 0 3px;
+    animation: bounce 0.6s infinite alternate;
+}
+
+.loader > span:nth-child(2){
+    animation-delay: 0.2s;
+}
+.loader > span:nth-child(3){
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    to {
+        width: 8px;
+        height: 8px;
+        transform: translate3d(0, -8px, 0);
+    }
+}
 .soon{
     display: flex;
     font-size: 150%;
     &__btn{
-        width: 33%;
+        display: flex;
         min-width: 200px;
         margin: 3% auto;
         font-family: "roboto";
@@ -166,9 +284,13 @@ header{
 }
 
 .menuSection{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    
+    &__title{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+    }
     &--note{
         font-family: 'Devonshire';
     }
@@ -185,35 +307,44 @@ header{
     }
 }
 
+.barre{
+    width: 40%;
+    height: 6px;
+    background: $colour-primary;
+    margin: 5px;
+    &--laNote{
+        background: $couleur-texte-menuNote;
+    }
+    &--leDelice{
+        background:-webkit-linear-gradient(top left, #0228DD, #229DF9); ;
+    }
+    &--leChic{
+        background: $couleur-texte-menuChic;
+    }
+    &--laPalette{
+        background: #3D9339;
+    }
+}
+
+
 .menuHeader{
     text-align: center;
     margin-top: 20px;
     &__fas{
-        font-size: 200%;
+        font-size: 150%;
         background: -webkit-linear-gradient(left, $couleur-texte-menuNote1, $couleur-texte-menuNote2);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 }
 
-.menu{
-    margin: 20px;
-    &__footer{
-        display: flex;
-        font-family: 'Devonshire';
-        p{
-            font-weight: bold;
-            margin-left: 5px;
-        }
-    }
-    &__titre{
-        font-size: 150%;
-    }
-}
 
 .menuItem{
     box-shadow: 0 0 0.5rem grey;
-    margin: 20px;
+    max-width: 66%;
+    margin: auto;
+    min-height: 1000PX;
+    padding: 20px;
 }
 
 .item{
@@ -229,17 +360,22 @@ li{
 
 .item__price{
     font-weight: bold;
+    font-size: 175%;
 }
-
+.item__name{
+    font-size: 150%;
+}
 
 .menuDetails{
     padding: 15px;
+    font-size: 100%;
     &--chic{
         background: -webkit-linear-gradient(top left, $couleur-texte-menuChic, $couleur-texte-menuChic2);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 }
+
 //////////*FOOTER*//////////////
 footer{
     height: 3rem;
@@ -260,9 +396,4 @@ footer{
         }
     }
 }
-
-
-
-
-
 

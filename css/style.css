@@ -26,7 +26,14 @@ ul {
 }
 
 h4 {
-  margin: 0;
+  background: linear-gradient(to top, rgba(255, 0, 0, 0.5) 0%, rgba(255, 0, 0, 0.5) 10%, transparent 10.01%) no-repeat left bottom/0 100%;
+  transition: background-size 0.5s;
+  font-size: 175%;
+  text-align: center;
+}
+
+h4:hover {
+  background-size: 100% 100%;
 }
 
 header {
@@ -43,32 +50,116 @@ header a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 1000px;
+  align-items: center;
+  margin: auto;
+}
+
+.menu {
+  margin: 20px;
+  width: 300px;
+  height: 400px;
+  box-shadow: 0 0 0.5rem grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 150%;
+  text-align: center;
+  transition: font-size 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+.menu:hover {
+  font-size: 200%;
+  opacity: 0.8;
+}
+.menu--note {
+  background-color: #FCDFDB;
+}
+.menu--note__fas {
+  font-size: 200%;
+  background: -webkit-linear-gradient(left, #F04A5E, #F78F6A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.menu--note a {
+  color: #3C1218;
+  font-family: "Devonshire";
+}
+.menu--note p {
+  font-family: "kalam";
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+.menu--chic {
+  color: #C77412;
+}
+.menu--chic h3 {
+  font-family: "Croissant One";
+  background: -webkit-linear-gradient(top left, #C77412, #905BFD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+.menu--chic p {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: #C77412;
+}
+.menu--delice {
+  color: #229DF9;
+}
+.menu--delice h3 {
+  font-family: "Dancing Script";
+  background: -webkit-linear-gradient(top left, #0228DD, #229DF9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  text-align: center;
+}
+.menu--delice p {
+  font-family: "kalam";
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: #229DF9;
+}
+.menu--palette {
+  color: #72BF56;
+}
+.menu--palette h3 {
+  font-family: "Kaushan Script";
+  background: -webkit-linear-gradient(top left, #3D9339, #BFFF7E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+.menu--palette p {
+  font-family: "kalam";
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: #72BF56;
+}
+.menu__footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 200%;
+}
+.menu__footer--laNote {
+  font-family: "devonshire";
 }
 
 .menu__link {
-  width: 250px;
-  height: 350px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 0.5rem grey;
-  margin: 2rem;
-  transition: font-size 300ms ease-in-out, opacity 300ms ease-in-out;
-}
-.menu__link:hover {
-  font-size: 150%;
-  opacity: 0.8;
+  min-height: 1680px;
 }
 .menu__link p {
   font-size: 200%;
   margin-top: 10px;
 }
 .menu__link--note {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #FCDFDB;
   color: #3C1218;
 }
@@ -83,7 +174,6 @@ header a {
 }
 .menu__link--chic {
   color: #C77412;
-  font-weight: bold;
 }
 .menu__link--chic h3 {
   font-family: "Croissant One";
@@ -114,12 +204,43 @@ header a {
   text-align: center;
 }
 
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader > span {
+  display: inline-block;
+  background-color: #FDCB46;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 0 3px;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.loader > span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loader > span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  to {
+    width: 8px;
+    height: 8px;
+    transform: translate3d(0, -8px, 0);
+  }
+}
 .soon {
   display: flex;
   font-size: 150%;
 }
 .soon__btn {
-  width: 33%;
+  display: flex;
   min-width: 200px;
   margin: 3% auto;
   font-family: "roboto";
@@ -137,9 +258,9 @@ header a {
   margin: 5px;
 }
 
-.menuSection {
+.menuSection__title {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
 .menuSection--note {
@@ -157,35 +278,42 @@ header a {
   font-family: "Croissant One";
 }
 
+.barre {
+  width: 40%;
+  height: 6px;
+  background: #579C87;
+  margin: 5px;
+}
+.barre--laNote {
+  background: #3C1218;
+}
+.barre--leDelice {
+  background: -webkit-linear-gradient(top left, #0228DD, #229DF9);
+}
+.barre--leChic {
+  background: #C77412;
+}
+.barre--laPalette {
+  background: #3D9339;
+}
+
 .menuHeader {
   text-align: center;
   margin-top: 20px;
 }
 .menuHeader__fas {
-  font-size: 200%;
+  font-size: 150%;
   background: -webkit-linear-gradient(left, #F04A5E, #F78F6A);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.menu {
-  margin: 20px;
-}
-.menu__footer {
-  display: flex;
-  font-family: "Devonshire";
-}
-.menu__footer p {
-  font-weight: bold;
-  margin-left: 5px;
-}
-.menu__titre {
-  font-size: 150%;
-}
-
 .menuItem {
   box-shadow: 0 0 0.5rem grey;
-  margin: 20px;
+  max-width: 66%;
+  margin: auto;
+  min-height: 1000PX;
+  padding: 20px;
 }
 
 .item {
@@ -200,10 +328,16 @@ li {
 
 .item__price {
   font-weight: bold;
+  font-size: 175%;
+}
+
+.item__name {
+  font-size: 150%;
 }
 
 .menuDetails {
   padding: 15px;
+  font-size: 100%;
 }
 .menuDetails--chic {
   background: -webkit-linear-gradient(top left, #C77412, #905BFD);
